@@ -4,6 +4,7 @@ import { pickRandomRecipe } from "../GameLogic/recipeLogic.js";
 import { startTimer, resumeTimer, recipecontainer, scorecontainer, timesup, timerReset } from "../GameLogic/timing.js";
 import {scoreReset } from "../GameLogic/scorelogic.js";
 import { generateMap } from "../GameLogic/map.js";
+import { initPlayer } from "../GameLogic/entities.js";
 export let gameRunning = false;
 export function gameRunningset(value){
     gameRunning = value;
