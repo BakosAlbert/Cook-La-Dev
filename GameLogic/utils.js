@@ -1,5 +1,6 @@
 //A játék működéséhez elengedhetetlen segédfüggvények
 import { notWalkable, notWalkableObjects } from "./constvariable.js";
+import { objectLayer, baseLayer } from "./map.js";
 
 //A karakter előtti plaftformok lekérése
 export function getTileInFront(player){
