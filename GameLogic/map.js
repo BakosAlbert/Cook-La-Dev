@@ -29,7 +29,7 @@ const objectLayer = [
 ];
 
 //A pálya generálása
-function generateMap() {
+export function generateMap() {
     const container = document.getElementById("gameContainer");
     container.innerHTML = "";
 
