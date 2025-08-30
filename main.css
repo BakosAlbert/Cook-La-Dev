@@ -1,0 +1,496 @@
+*{
+  font-family: 'VT323', monospace;
+}
+body {
+  background: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  gap: 20px;
+}
+
+#gameContainer {
+  @media screen and (max-width: 1280px) {
+    transform: scale(1.85);
+    margin-bottom: 150px;
+  }
+  @media screen and (max-width: 1920px) {
+    transform: scale(2);
+  }
+  width: 384px; 
+  height: 3px;
+  position: relative; 
+  background-color: #222;
+  border: 2px solid black;
+}
+
+.player {
+  width: 32px;
+  height: 32px;
+  position: absolute; 
+  image-rendering: pixelated; 
+  z-index: 1;
+}
+
+.tile {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  z-index: 1;
+}
+
+.floor {
+  background: url('./assets/basics/floor.png');
+}
+
+.wall {
+  background: url('./assets/basics/wall.png');
+
+}
+
+.counter {
+  background: url('./assets/Kitcheneqiupments/desk.png');
+}
+
+.stovedown {
+  background: url('./assets/Kitcheneqiupments/gasstove.png');
+  rotate: 270deg;
+    
+}
+.stoveup{
+    background: url('./assets/Kitcheneqiupments/gasstove.png');
+    rotate: 90deg;
+}
+.stoveleft{
+    background: url('./assets/Kitcheneqiupments/gasstove.png');
+
+}
+.stoveright{
+    background: url('./assets/Kitcheneqiupments/gasstove.png');
+    rotate: 180deg;
+}
+.trashcan{
+    background: url('./assets/Kitcheneqiupments/trash.png');
+}
+.overlay{
+    z-index: 2;
+
+}
+.cuttingboardtopdown{
+    background: url('./assets/Kitcheneqiupments/cuttingtablewknife.png');
+    background-size: cover;
+    width: 32px;
+    height: 32px;
+    rotate: 90deg;
+    
+}
+.cuttingboardside.cuttingboard_swap{
+    background-image: url('./assets/Kitcheneqiupments/cuttingtable.png');
+}
+.cuttingboardtopdown.cuttingboard_swap{
+    background-image: url('./assets/Kitcheneqiupments/cuttingtable.png');
+}
+.cuttingboardside{
+    background: url('./assets/Kitcheneqiupments/cuttingtablewknife.png');
+    background-size: cover;
+    width: 32px;
+    height: 32px;
+}
+.pan{
+    background: url('./assets/Kitcheneqiupments/pan.png') no-repeat center center;
+    background-size: contain;
+    width: 32px;
+    height: 32px;
+    rotate: 180deg;
+    scale: 1.075;
+    margin-top: -4.6px;
+    margin-left: -4.5px;
+    
+    
+
+}
+
+.pot{
+    background: url('./assets/Kitcheneqiupments/cookingpot.png') no-repeat center center;
+    background-size: contain;
+    width: 32px;
+    height: 32px;
+    rotate: 180deg;
+    scale: 1.075;
+    margin-left: 1px;
+}
+
+.servedesk{
+    background: url('./assets/Kitcheneqiupments/servingdesk.png');
+
+}
+
+.tomatocrate{
+    background: url('./assets/Crates/tomatocrate.png');
+}
+.onioncrate{
+    background: url('./assets/Crates/onioncrate.png');
+}
+.chickenmeatcrate{
+    background: url('./assets/Crates/chickenmeatcrate.png');
+}
+.beefmeatcrate{
+    background: url('./assets/Crates/beefmeatcrate.png');
+}
+.lettucecrate{
+    background: url('./assets/Crates/lettucecrate.png');
+}
+.mushroomcrate{
+    background: url('./assets/Crates/mushroomcrate.png');
+}
+.fishmeatcrate{
+    background: url('./assets/Crates/fishmeatcrate.png');
+}
+.cheesecrate{
+    background: url('./assets/Crates/cheesecrate.png');
+}
+.ricecrate{
+    background: url('./assets/Crates/ricecrate.png');
+}
+.chilicrate{
+    background: url('./assets/Crates/chilicrate.png');
+}
+
+.platedispenser{
+    background: url('./assets/Kitcheneqiupments/platetable0.2.png');
+}
+
+.hamburgerbunscrate{
+    background: url('./assets/Crates/hamburgerbunscrate.png');
+}
+
+.held {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.placed-item {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  pointer-events: none; 
+  z-index: 20; 
+  scale: 0.65;
+}
+
+#recipecontainer {
+  position: fixed;
+  bottom: 10px;
+  left: 2px;
+  margin: 20px;
+  padding: 15px 8px;
+  z-index: 10;
+  max-width: 300px; 
+  background-color: wheat;
+  box-shadow: 
+  0px 5px #d2b48c,
+  0px -5px #d2b48c,
+  5px 0px #d2b48c,
+  -5px 0px #d2b48c,
+  5px 5px #8b5a2b,
+  -5px 5px #af9072,
+  inset 0px 5px #e7deb7;
+
+  
+}
+#recipecontainer.hidden{
+  display: none !important;
+}
+
+@media screen and (max-width: 1920px) {
+  #recipecontainer {
+    transform: scale(1.5);
+    margin-left: 90px;
+    margin-bottom: 50px;
+    
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  #recipecontainer {
+    transform: scale(1.25);
+    margin-left: 50px;
+    margin-bottom: 20px;
+    
+  }
+}
+
+
+.recipe-header {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: rgb(31, 5, 5);
+  text-align: center;
+  word-wrap: break-word;
+  text-transform:uppercase;
+  background-color: #d2b48c;
+  box-shadow: 
+  0px 5px #d2b48c,
+  0px -5px #d2b48c,
+  5px 0px #d2b48c,
+  -5px 0px #d2b48c,
+  5px 5px #ddbb9b,
+  -5px 5px #dbbc9e,
+  inset 0px 5px #d2b48c;
+  
+}
+
+.recipe-ui {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: flex-start;
+  font-size: 0.9;
+}
+
+.ingredient {
+  padding: 2px 3px;
+  color: black;
+  text-transform: capitalize;
+  white-space: nowrap;
+  font-size: larger;
+  flex: 1 1 calc(50% - 3px); 
+  box-sizing: border-box;
+}
+.ingredient::before{
+  content: "- ";
+  font-weight: bolder;
+}
+
+.ingredient.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+  color: rgb(56, 56, 56);
+  font-weight: bolder;
+}
+
+#score-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgb(255, 174, 0);
+  border: 2px solid rgb(51, 8, 8);
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 18px;
+  color: rgb(70, 42, 11);
+  box-shadow: inset 1px 1px 10px rgb(231, 106, 22);
+  user-select: none;
+  z-index: 10;
+  min-width: 120px;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column; 
+  gap: 8px; 
+}
+#score-container.hidden{
+  display: none !important;
+}
+@media screen and (max-width: 1280px) {
+  #score-container {
+    transform: scale(1.25);
+    margin: 20px;
+  }
+  
+}
+
+@media screen and (max-width: 1920px) {
+  #score-container {
+    transform: scale(1.5);
+    margin: 40px;
+  }
+  
+}
+
+#timer {
+  position: static; 
+  background-color: rgb(255, 174, 0);
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  box-shadow: none;
+}
+
+#endscreen{
+  margin: 0 auto;
+  margin-bottom: 200px;
+  background-color: rgb(255, 174, 0);
+  border: 3px solid rgb(51, 8, 8);
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1.5em;
+  color:rgb(70, 42, 11);
+  box-shadow: inset 1px 1px 10px rgb(231, 106, 22);
+  text-align: center;
+  position: fixed;
+
+    #restartbutton, #leaderboardbutton{
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 0.85em;
+      border-radius: 10px;
+      background-color: rgb(255, 187, 0);
+      border: 2.95px solid rgb(51, 8, 8);
+      font-weight: bold;
+      box-shadow: inset 1px 1px 10px rgb(231, 106, 22);
+      color:rgb(70, 42, 11);
+      cursor: pointer;
+    }
+    #restartbutton:hover, #leaderboardbutton:hover{
+      transform: scale(1.025);
+      transition: transform 0.2s ease-in;
+    }
+
+}
+
+#getname{
+  margin: 0 auto;
+  margin-bottom: 200px;
+  background-color: rgb(255, 174, 0);
+  border: 3px solid rgb(51, 8, 8);
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1.5em;
+  color:rgb(70, 42, 11);
+  box-shadow: inset 1px 1px 10px rgb(231, 106, 22);
+  text-align: center;
+  position: fixed;
+}
+#getname p{
+  text-align: center;
+  font-size: 0.9em;
+}
+#getname input{
+  margin: 10px;
+  font-weight: bold;
+  background-color:rgb(255, 187, 0);
+  box-shadow: inset 0.5px 0.5px 10px gray;
+  height: 30px;
+  border: 2px solid rgb(51, 8, 8);
+  border-radius: 5px;
+  font-size: 0.65em;
+  padding: 5px;
+}
+#getname #submitbutton{
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 0.85em;
+  border-radius: 10px;
+  background-color: rgb(255, 187, 0);
+  border: 2.95px solid rgb(51, 8, 8);
+  font-weight: bold;
+  box-shadow: inset 1px 1px 10px rgb(231, 106, 22);
+  color:rgb(70, 42, 11);
+  cursor: pointer;
+
+}
+#getname #submitbutton:hover{
+  transform: scale(1.025);
+  transition: transform 0.2s ease-in;
+}
+#getname.hidden{
+  display: none;
+}
+
+#endscreen.timesupshow #Timesup, #endscreen.timesupshow span{
+  display: block;
+}
+#endscreen.hidden{
+  display: none;
+  span{
+    display: none;
+  }
+  
+
+}
+#leaderboard{
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 200px;
+    width: 30%;
+    background-color: rgb(255, 174, 0);
+    border: 3px solid rgb(51, 8, 8);
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1.5em;
+    color:rgb(70, 42, 11);
+    box-shadow: inset 1px 1px 10px rgb(231, 106, 22);
+    text-align: center;
+    position: fixed;
+
+    #background{
+      background-color: rgb(51, 8, 8);
+      padding: 5px;
+      border-radius: 10px;
+    }
+    #text{
+      font-weight: bold;
+      text-transform:uppercase;
+      font-size: 1.25em;
+      font-style: italic;
+    }
+    .datas{
+      display: flex;
+      justify-content: space-between;
+      background-color: rgb(255, 174, 0);
+      padding: 5px;
+      margin: 10px;
+      border-radius: 10px;
+      box-shadow: 2px 2px 10px inset  wheat;
+
+      .players-name{
+        padding-left: 5px;
+        color:rgb(70, 42, 11);
+        text-align: left;
+        
+
+      }
+      .players-point{
+        padding-right: 5px;
+        color:rgb(70, 42, 11);
+        text-align: right;
+        
+      }
+      .players-name.hidden{
+        display: none;
+      }
+      .players-point.hidden{
+        display: none;
+      }
+    }
+    button{
+        margin: 12.5px;
+        padding: 10px 20px;
+        font-size: 0.85em;
+        border-radius: 10px;
+        background-color: rgb(255, 187, 0);
+        border: 2.95px solid rgb(51, 8, 8);
+        font-weight: bold;
+        box-shadow: inset 1px 1px 10px rgb(231, 106, 22);
+        color:rgb(70, 42, 11);
+    }
+    button:hover{
+      transform: scale(1.025);
+      transition: transform 0.2s ease-in;
+    }
+}
+#leaderboard.hidden{
+  display: none;
+}
+

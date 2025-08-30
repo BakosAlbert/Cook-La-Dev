@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cook'LA</title>
+  <!-- A fő css importálása-->
+  <link rel="stylesheet" href="main.css" />
+  <!-- a böngészőben látható ikon beállítása-->
+  <link rel="icon" type="image/x-icon" href="./assets/menu/gamelogo.png">
+  <!--A használt betűstílus integrálása-->
+  <link href="https://fonts.googleapis.com/css?family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!--A menü struktúrája-->
+  <div id="menu">
+    <audio id="background-music" src="./assets/sounds/game_loop.mp3" loop autoplay></audio>
+    <link rel="stylesheet" href="menu/menustyle.css">
+    <div id="Mainmenu" class="menu">
+      <h1><img id="menulogo" src="./assets/menu/gamelogo4.png"></h1>
+      <button id="startbutton">Start Game</button>
+      <button id="continuebutton">Continue</button>
+      <button id="htpbutton">How to Play</button>
+      <button id="contbutton">Controls</button>
+      <p id="credit">Developer - Bakos Albert István <br> Music - Lukrembo (freetouse.com)
+
+      </p>
+    </div>
+
+    <div id="htp" class="menu hidden">
+      <h2>How to play?</h2>
+      <p>Step into the kitchen chaos! Grab ingredients from the crates, chop them if needed, and deliver them to the serving counter. Every correct dish earns points, but mistakes will cost you—so work fast and stay sharp! Beat the clock, rack up the highest score, and climb the leaderboard to claim your spot at the top!</p>
+      <button id="htpbackbutton">back</button>
+    </div>
+
+    <div id="controls" class="menu hidden">
+      <img id="keyboardfunc" src="./assets/controls/Keyboardfunctions.png" alt="">
+      <button id="contbackbutton">back</button>
+    </div>
+  </div>
+  <!--A játéktér inicializálása-->
+  <div id="gameContainer"></div>
+  <!--A Hud elemek inicializálása-->
+  <div id="recipecontainer">
+    <h2 class="recipe-header"></h2>
+    <div class="recipe-ui"></div>
+  </div>
+  
+  <div id="score-container">
+    Score: <span id="score-value">0</span>
+    <div id="timer">
+      Time: 
+    </div>
+  </div>
+  <div id="endscreen">
+    <span id="Timesup">Time's Up!</span><br>
+    <span>Your score: <span id="endscore">0</span></span>
+    <button id="restartbutton">Restart</button>
+    <button id="leaderboardbutton">Next</button>
+    
+  </div>
+  <!--A játékosnév megadásához szükséges kérdőív inicializálása-->
+  <div id="getname">
+    <p>Add your name to the leaderboard</p>
+    <input id="playername" type="text" name="username" placeholder="Username" required>
+    <br>
+    <button id="submitbutton" type="button">Next</button>
+  </div>
+  <!--A rangsor sturktúrája-->
+  <div id="leaderboard">
+    <p id="text">Leaderboard</p>
+    <div id="background">
+      <div id="data">
+      </div>
+      
+    </div>
+    <button id="tomenu">Next</button>
+  </div>
+  <!--A szükséges fájlok a működéshez-->
+  <script type="module" src="menu/menulogic.js"></script>
+  <script src="GameLogic/entities.js"></script>
+  <script src="GameLogic/map.js"></script>
+  <script type ="module" src="menu/gamestart.js"></script>
+</body>
+</html>
