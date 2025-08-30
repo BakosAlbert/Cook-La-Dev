@@ -1,5 +1,4 @@
 //A pálya konfigurációja
-
 //Az alapok inicializálása (pultok, kiszolgáló asztal, talaj)
 export const baseLayer = [
     [1,1,1,1,1,1,1,1,1,1,1,1,1],

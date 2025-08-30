@@ -1,5 +1,5 @@
 //Entitások inicializálása
-let player = {
+export let player = {
   x: 6,
   y: 4,
   element: null,
@@ -9,7 +9,7 @@ let player = {
 };
 
 //Játékos inicializálása
-function initPlayer() {
+export function initPlayer() {
   const el = document.createElement("img");
   el.src = "./assets/basics/character.png";
   el.classList.add("player");
@@ -19,14 +19,14 @@ function initPlayer() {
 }
 
 //Játékos helyzetének frissítése
-function updatePlayerPosition() {
+export function updatePlayerPosition() {
   player.element.style.left = player.x * 32 + "px";
   player.element.style.top = player.y * 32 + "px";
   console.log("Frissített pozíció stílusban:", player.element.style.left, player.element.style.top);
 }
 
 //Játékos alaphelyzetbe állítása
-function resetPlayerpos(){
+export function resetPlayerpos(){
   player.x=6;
   player.y=4;
   updatePlayerPosition();
