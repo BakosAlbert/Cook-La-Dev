@@ -86,7 +86,7 @@ export function placeItemOnDesk(x, y, item){
     placedItems[key] = item;
     const container = document.getElementById("gameContainer");
     const itemEl= document.createElement("img");
-    itemEl.src = `assets/Ingredientsprites/${item}.png`;
+    itemEl.src = `../../assets/Ingredientsprites/${item}.png`;
     itemEl.classList.add("placed-item");
     itemEl.style.position = "absolute";
     itemEl.style.left = x * 32 + "px";
