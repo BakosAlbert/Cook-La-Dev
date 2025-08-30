@@ -1,7 +1,7 @@
 //A pálya konfigurációja
 
 //Az alapok inicializálása (pultok, kiszolgáló asztal, talaj)
-const baseLayer = [
+export const baseLayer = [
     [1,1,1,1,1,1,1,1,1,1,1,1,1],
     [1,6,7,8,9,11,12,13,14,16,17,0,1],
     [1,0,0,0,0,0,0,0,0,0,0,0,5],
@@ -15,7 +15,7 @@ const baseLayer = [
 ];
 
 //A pultokon előforduló eszközök konfigurációja (egyenlőre vágódeszka)
-const objectLayer = [
+export const objectLayer = [
     [0,0,0,0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0,0,0,0],
