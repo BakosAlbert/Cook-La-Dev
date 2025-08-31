@@ -7,8 +7,8 @@ export const timesup=document.getElementById("endscreen");
 const endscore=document.getElementById("endscore");
 
 //A fájlban szükséges változók
-let timeleft = 20;
-let delta=20;
+let timeleft = 180;
+let delta=180;
 const timerEl = document.getElementById('timer');
 let intervalId = null;
 
