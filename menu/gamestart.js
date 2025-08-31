@@ -8,6 +8,7 @@ export function gameRunningset(value){
     gameRunning = value;
 }
 export function startgame(){
+    player.heldItem=null;
     scoreReset(0);
     timerReset();
     resumeTimer();
