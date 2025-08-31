@@ -8,6 +8,10 @@ let player = {
   locked: false,
 };
 
+function heldItemnull(){
+  player.heldItem=null;
+}
+
 //Játékos inicializálása
 function initPlayer() {
   const el = document.createElement("img");

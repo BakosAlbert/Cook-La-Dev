@@ -5,7 +5,7 @@ import { scoreReset } from "./scorelogic.js";
 import { timerReset, startTimer, timesup, recipecontainer, scorecontainer } from "./timing.js";
 
 export function gameRestart(){
-    player.heldItem=null;
+    heldItemnull();
     timesup.classList.add("hidden");
     recipecontainer.classList.remove("hidden");
     scorecontainer.classList.remove("hidden");
