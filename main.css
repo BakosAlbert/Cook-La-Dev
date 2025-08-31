@@ -51,35 +51,35 @@ body {
 }
 
 .counter {
-  background: url('./assets/Kitcheneqiupments/desk.png');
+  background: url('./assets/kitcheneqiupments/desk.png');
 }
 
 .stovedown {
-  background: url('./assets/Kitcheneqiupments/gasstove.png');
+  background: url('./assets/kitcheneqiupments/gasstove.png');
   rotate: 270deg;
     
 }
 .stoveup{
-    background: url('./assets/Kitcheneqiupments/gasstove.png');
+    background: url('./assets/kitcheneqiupments/gasstove.png');
     rotate: 90deg;
 }
 .stoveleft{
-    background: url('./assets/Kitcheneqiupments/gasstove.png');
+    background: url('./assets/kitcheneqiupments/gasstove.png');
 
 }
 .stoveright{
-    background: url('./assets/Kitcheneqiupments/gasstove.png');
+    background: url('./assets/kitcheneqiupments/gasstove.png');
     rotate: 180deg;
 }
 .trashcan{
-    background: url('./assets/Kitcheneqiupments/trash.png');
+    background: url('./assets/kitcheneqiupments/trash.png');
 }
 .overlay{
     z-index: 2;
 
 }
 .cuttingboardtopdown{
-    background: url('./assets/Kitcheneqiupments/cuttingtablewknife.png');
+    background: url('./assets/kitcheneqiupments/cuttingtablewknife.png');
     background-size: cover;
     width: 32px;
     height: 32px;
@@ -87,19 +87,19 @@ body {
     
 }
 .cuttingboardside.cuttingboard_swap{
-    background-image: url('./assets/Kitcheneqiupments/cuttingtable.png');
+    background-image: url('./assets/kitcheneqiupments/cuttingtable.png');
 }
 .cuttingboardtopdown.cuttingboard_swap{
-    background-image: url('./assets/Kitcheneqiupments/cuttingtable.png');
+    background-image: url('./assets/kitcheneqiupments/cuttingtable.png');
 }
 .cuttingboardside{
-    background: url('./assets/Kitcheneqiupments/cuttingtablewknife.png');
+    background: url('./assets/kitcheneqiupments/cuttingtablewknife.png');
     background-size: cover;
     width: 32px;
     height: 32px;
 }
 .pan{
-    background: url('./assets/Kitcheneqiupments/pan.png') no-repeat center center;
+    background: url('./assets/kitcheneqiupments/pan.png') no-repeat center center;
     background-size: contain;
     width: 32px;
     height: 32px;
@@ -113,7 +113,7 @@ body {
 }
 
 .pot{
-    background: url('./assets/Kitcheneqiupments/cookingpot.png') no-repeat center center;
+    background: url('./assets/kitcheneqiupments/cookingpot.png') no-repeat center center;
     background-size: contain;
     width: 32px;
     height: 32px;
@@ -123,7 +123,7 @@ body {
 }
 
 .servedesk{
-    background: url('./assets/Kitcheneqiupments/servingdesk.png');
+    background: url('./assets/kitcheneqiupments/servingdesk.png');
 
 }
 
@@ -159,7 +159,7 @@ body {
 }
 
 .platedispenser{
-    background: url('./assets/Kitcheneqiupments/platetable0.2.png');
+    background: url('./assets/kitcheneqiupments/platetable0.2.png');
 }
 
 .hamburgerbunscrate{
