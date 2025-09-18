@@ -1,47 +1,19 @@
-<div id="dpadup" class="dpad">
-    <style>
-        .dpad{
-            width: 0;
-            height: 0;
-            border-left: 25px solid transparent;
-            border-right: 25px solid transparent;
-            border-bottom: 50px solid #555;
-        }
-    </style>
-</div>
-<div id="dpaddown" class="dpad">
-    <style>
-        .dpad{
-            width: 0;
-            height: 0;
-            border-left: 25px solid transparent;
-            border-right: 25px solid transparent;
-            border-bottom: 50px solid #555;
-            rotate: 180deg;
-        }
-    </style>
-</div>
-<div id="dpadright" class="dpad">
-    <style>
-        .dpad{
-            width: 0;
-            height: 0;
-            border-left: 25px solid transparent;
-            border-right: 25px solid transparent;
-            border-bottom: 50px solid #555;
-            rotate: -90deg;
-        }
-    </style>
-</div>
-<div id="dpadleft" class="dpad">
-    <style>
-        .dpad{
-            width: 0;
-            height: 0;
-            border-left: 25px solid transparent;
-            border-right: 25px solid transparent;
-            border-bottom: 50px solid #555;
-            rotate: 90deg;
-        }
-    </style>
-</div>
+<div id="dpadup" class="dpad"></div>
+<div id="dpaddown" class="dpad"></div>
+<div id="dpadright" class="dpad"></div>
+<div id="dpadleft" class="dpad"></div>
+
+<style>
+.dpad {
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 50px solid #555;
+  display: inline-block;
+  margin: 10px;
+}
+#dpaddown { transform: rotate(180deg); }
+#dpadright { transform: rotate(90deg); }
+#dpadleft { transform: rotate(-90deg); }
+</style>
