@@ -1,8 +1,9 @@
 //A játék elindítása a menüből (start gombbal)
-import {control} from "../GameLogic/control.js";
+import {control, mobilecontrol} from "../GameLogic/control.js";
 import { pickRandomRecipe } from "../GameLogic/recipeLogic.js";
 import { startTimer, resumeTimer, recipecontainer, scorecontainer, timesup, timerReset } from "../GameLogic/timing.js";
 import {scoreReset } from "../GameLogic/scorelogic.js";
+import { isMobile } from "../GameLogic/constvariable.js";
 export let gameRunning = false;
 export function gameRunningset(value){
     gameRunning = value;
@@ -16,7 +17,12 @@ export function startgame(){
     generateMap();
     initPlayer();
     resetPlayerpos();
-    control();
+    if(isMobile){
+        mobilecontrol();
+        console.log("mobile");
+    }else{
+        control();
+    }
     recipecontainer.classList.remove("hidden");
     scorecontainer.classList.remove("hidden");
     pickRandomRecipe();
