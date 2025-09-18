@@ -4,11 +4,30 @@
     border-left: 25px solid transparent;
     border-right: 25px solid transparent;
     border-bottom: 50px solid #555;
-    display: inline-block;
-    margin: 10px;
-        
+    display: flex;
+    position: absolute; 
+    z-index: 1;  
     
 }
-#dpaddown { transform: rotate(180deg); }
-#dpadright { transform: rotate(90deg); }
-#dpadleft { transform: rotate(-90deg); }
+#dpadup { 
+    transform: rotate(0deg);
+    margin-top: -70px; 
+}
+#dpaddown { 
+    transform: rotate(180deg); 
+    margin-top: 70px; 
+}
+#dpadright { 
+    transform: rotate(90deg); 
+    margin-left: 70px; 
+}
+#dpadleft { 
+    transform: rotate(-90deg); 
+    margin-left: -70px; 
+}
+
+#dpadcontainer{
+    position: absolute;
+    left: 200px;
+    transform: scale(1.5);
+}
