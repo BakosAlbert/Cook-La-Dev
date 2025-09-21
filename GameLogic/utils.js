@@ -1,5 +1,6 @@
 //A játék működéséhez elengedhetetlen segédfüggvények
 import { notWalkable, notWalkableObjects } from "./constvariable.js";
+import { isMobile } from "./constvariable.js";
 
 //A karakter előtti plaftformok lekérése
 export function getTileInFront(player){
@@ -97,4 +98,23 @@ export function movePlayer(dx, dy){
 
     
 
+}
+export function zoomdeny() {
+  if (isMobile) {
+    // pinch tiltás
+    document.addEventListener('touchmove', function (event) {
+      if (event.scale !== undefined && event.scale !== 1) {
+        event.preventDefault();
+      }
+    }, { passive: false });
+
+    let lastTouchEnd = 0;
+    document.addEventListener('touchend', function (event) {
+      const now = new Date().getTime();
+      if (now - lastTouchEnd <= 300) {
+        event.preventDefault();
+      }
+      lastTouchEnd = now;
+    }, { passive: false });
+  }
 }

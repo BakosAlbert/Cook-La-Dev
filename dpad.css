@@ -3,31 +3,94 @@
     height: 0;
     border-left: 25px solid transparent;
     border-right: 25px solid transparent;
-    border-bottom: 50px solid #555;
+    border-bottom: 50px solid rgba(128, 128, 128, 0.85);
     display: flex;
     position: absolute; 
     z-index: 1;  
     
 }
+
 #dpadup { 
     transform: rotate(0deg);
     margin-top: -70px; 
+}
+#dpadup:active{
+    transform: scale(1.15) rotate(0deg);
+    transition: transform ease 0.2;
+    
 }
 #dpaddown { 
     transform: rotate(180deg); 
     margin-top: 70px; 
 }
+#dpaddown:active{
+    transform: scale(1.15) rotate(180deg);
+    transition: transform ease 0.2;
+}
 #dpadright { 
     transform: rotate(90deg); 
     margin-left: 70px; 
+}
+#dpadright:active{
+    transform: scale(1.15) rotate(90deg);
+    transition: transform ease 0.2;
+}
+#dpadleft:active{
+    transform: scale(1.15) rotate(-90deg);
+    transition: transform ease 0.2;
 }
 #dpadleft { 
     transform: rotate(-90deg); 
     margin-left: -70px; 
 }
 
-#dpadcontainer{
+.dpadcontainer{
     position: absolute;
     left: 200px;
     transform: scale(1.5);
+}
+
+.buttons{
+    display: flex;
+    position: absolute;
+    z-index: 1;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    border: 2.5px solid;
+    right: 150px;
+    img{
+        transform: scale(0.65);
+    }
+}
+@media screen and (max-height: 920px){
+    .dpadcontainer{
+        transform: scale(1);
+        left: 120px;
+        top: 165px;
+
+    }
+    .buttons{
+        transform: scale(0.8);
+        right: 100px;
+        top: 145px;
+    }
+}
+
+.buttons:active{
+    transform: scale(1.15);
+    transition: transform ease 0.2;
+}
+
+#cutting{
+    
+    background-color: rgba(128, 128, 128, 0.65);
+    border-color: black;
+    margin: 70px;
+}
+
+#use{
+    background-color: rgba(128, 128, 128, 0.65);
+    border-color: black;
+
 }

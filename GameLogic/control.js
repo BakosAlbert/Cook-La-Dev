@@ -5,6 +5,8 @@ const dpadup = document.getElementById("dpadup");
 const dpaddown = document.getElementById("dpaddown");
 const dpadleft = document.getElementById("dpadleft");
 const dpadright = document.getElementById("dpadright");
+const cuttingbtn = document.getElementById("cutting");
+const usebtn = document.getElementById("use");
 
 let controlsinit = false;
 export function control(){
@@ -49,19 +51,6 @@ export function mobilecontrol(){
     }else{
         controlsinit=true;
     }
-    /*dpadup.addEventListener('touchstart', ()=>{
-        movePlayer(0, -1);
-    });
-    dpaddown.addEventListener('touchstart', ()=>{
-        movePlayer(0, 1);
-    });
-    dpadleft.addEventListener('touchstart', ()=>{
-        movePlayer(-1, 0);
-    });
-    dpadright.addEventListener('touchstart', ()=>{
-        movePlayer(1, 0);
-    });*/
-
     setTimeout(() => {
 
         if(!dpadup || !dpaddown || !dpadleft || !dpadright){
@@ -69,9 +58,11 @@ export function mobilecontrol(){
             return;
         }
 
-        dpadup.addEventListener('touchstart', ()=> movePlayer(0, -1));
+        dpadup.addEventListener('touchstart', ()=>movePlayer(0, -1)); 
         dpaddown.addEventListener('touchstart', ()=> movePlayer(0, 1));
         dpadleft.addEventListener('touchstart', ()=> movePlayer(-1, 0));
         dpadright.addEventListener('touchstart', ()=> movePlayer(1, 0));
+        cuttingbtn.addEventListener('touchstart', ()=>interactWithCuttingboard());
+        usebtn.addEventListener('touchstart', ()=>interactWithTile());
     }, 300);
 }

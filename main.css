@@ -19,12 +19,17 @@ body {
   @media screen and (max-width: 1920px) {
     transform: scale(2);
   }
+  @media screen and (max-height: 920px){
+    transform: scale(0.95);
+    margin-bottom: 50px;
+  }
   width: 384px; 
   height: 3px;
   position: relative; 
   background-color: #222;
   border: 2px solid black;
 }
+
 
 .player {
   width: 32px;
@@ -224,6 +229,14 @@ body {
     
   }
 }
+@media screen and (max-height: 920px){
+  #recipecontainer{
+    transform: scale(0.65);
+    right: 200px;
+    margin-bottom: 5px;
+
+  }
+}
 
 
 .recipe-header {
@@ -312,6 +325,12 @@ body {
     margin: 40px;
   }
   
+}
+@media screen and (max-height: 920px){
+  #score-container{
+    transform: scale(1.05);
+    margin: 40px;
+  }
 }
 
 #timer {
