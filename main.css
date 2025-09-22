@@ -229,14 +229,7 @@ body {
     
   }
 }
-@media screen and (max-height: 920px){
-  #recipecontainer{
-    transform: scale(0.65);
-    right: 200px;
-    margin-bottom: 5px;
 
-  }
-}
 
 
 .recipe-header {
@@ -287,6 +280,15 @@ body {
   font-weight: bolder;
 }
 
+@media screen and (max-height: 920px){
+  #recipecontainer{
+    transform: scale(0.65);
+    right: 200px;
+    margin-bottom: 5px;
+
+  }
+}
+
 #score-container {
   position: fixed;
   bottom: 20px;
@@ -329,7 +331,8 @@ body {
 @media screen and (max-height: 920px){
   #score-container{
     transform: scale(1.05);
-    margin: 40px;
+    margin-bottom: 20px;
+    margin-right: 100px;
   }
 }
 
@@ -437,6 +440,7 @@ body {
   
 
 }
+
 #leaderboard{
     margin: 0 auto;
     margin-top: 50px;
@@ -512,4 +516,9 @@ body {
 #leaderboard.hidden{
   display: none;
 }
-
+@media screen and (max-height: 920px){
+  #endscreen, #getname, #leaderboard{
+    transform: scale(0.65);
+    margin-bottom: 95px;
+  }
+}
